@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.authRHmicroService.users.entities.Role;
+import com.authRHmicroService.users.entities.User;
 import com.authRHmicroService.users.service.UserService;
 
 import jakarta.annotation.PostConstruct;
@@ -28,20 +29,20 @@ public class AuthRhApplication {
 	//ajouter les rôles
 	userService.addRole(new Role(null,"ADMIN"));
 	userService.addRole(new Role(null,"USER"));
+	userService.addRole(new Role(null,"RESPONSABLE"));
 	
-	//ajouter les users
-	userService.saveUser(new User(null,"admin","123",true,null));
-	
-	userService.saveUser(new User(null,"sadak","123",true,null));
-	userService.saveUser(new User(null,"sarra","123",true,null));
+	userService.saveUser(new User(null, "admin", "1234567", true, null, null));
+	userService.saveUser(new User(null, "responsable", "12334567", true, null, null));
+	userService.saveUser(new User(null, "sadak", "1234567", true, null, null));
+	userService.saveUser(new User(null, "sarra", "1234567", true, null, null));
 	//ajouter les rôles aux users
 	 
 	userService.addRoleToUser("admin", "ADMIN");
-	userService.addRoleToUser("admin", "USER");
+	userService.addRoleToUser("responsable", "RESPONSABLE");
 	userService.addRoleToUser("sadak", "USER");
 	userService.addRoleToUser("sarra", "USER");
 	}
-	*/
+*/
 	
 	
 }

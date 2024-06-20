@@ -15,6 +15,9 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
+
+import com.authRHmicroService.users.repos.UserRepository;
+
 import jakarta.servlet.http.HttpServletRequest;
 
 @Configuration
@@ -29,6 +32,8 @@ public class SecurityConfig {
 
  	@Autowired
  	AuthenticationManager authMgr;
+ 	
+ 	
 
 
  	@Bean
